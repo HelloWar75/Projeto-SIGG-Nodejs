@@ -21,7 +21,7 @@ router.post('/auth/login', (request, response, next) => {
 });
 
 router.post('/auth/register', (request, response, next) => {
-    let {username, password, password_confirm} = request.body;
+    let {username, password, password_confirmation} = request.body;
     var errors = {};
     
     //Validar formulário
@@ -33,11 +33,11 @@ router.post('/auth/register', (request, response, next) => {
         errors["password"] = "Senha precisa ser igual ou maior que 8 caracteres!";
     }
 
-    if( password_confirm < 8 ) {
+    if( password_confirmation < 8 ) {
         errors["password_confirmation"] = "Confirmação de senha precisa ser igual a senha!";
     }
 
-    if( password !== password_confirm ){
+    if( password !== password_confirmation ){
         errors["password_confirmation"] = "Senhas não são iguais! por favor revisar!";
     }
 
@@ -46,7 +46,8 @@ router.post('/auth/register', (request, response, next) => {
         //Se tiver erros
         response.send(422, {
             status: 'error',
-            errors: errors
+            errors: errors,
+            error: 'registration_validation_error'
         });
     }
 

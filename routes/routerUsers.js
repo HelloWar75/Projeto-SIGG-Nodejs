@@ -1,5 +1,7 @@
 const router = require('../config/server').server;
 const service = require('../services/user');
+const jwt = require('jsonwebtoken');
+const config = require('../config/config');
 
 router.get('/user', (request, response, next) => {
     let old_token = request.headers["authorization"].replace('Bearer ', '');
