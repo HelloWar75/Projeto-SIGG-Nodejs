@@ -17,6 +17,13 @@
   },
   "homepage": "https://github.com/HelloWar75/Projeto-SIGG-Nodejs#readme",
   "dependencies": {
-    "restify": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.18.1",
+    "pg-hstore": "^2.3.3",
+    "restify": "^8.5.1",
+    "restify-jwt-community": "^1.1.2",
+    "sequelize": "^5.21.4",
+    "sequelize-cli": "^5.5.1",
+    "validator": "^12.2.0"
   }
 }
